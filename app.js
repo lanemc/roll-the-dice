@@ -10,7 +10,7 @@ GAME RULES:
 */
 
 // variables
-var scores, roundScore, activePlayer, gamePlaying;
+var scores, roundScore, activePlayer, gamePlaying, previousRoll, winningScore;
 
 init();
 
@@ -19,6 +19,15 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
     if(gamePlaying) {
         //1. Random number
         var dice = Math.floor(Math.random() * 6) + 1;
+
+        console.log(dice + ' , ' + previousRoll);
+
+        if (dice === 6 && previousRoll === 6) {
+            // Next player
+            nextPlayer();
+        }
+        //1.5. Save the value of the previous roll
+        previousRoll = dice;
 
         //2. Display result
         var diceDOM = document.querySelector('.dice');
@@ -101,6 +110,11 @@ function init() {
     document.querySelector('.player-1-panel').classList.remove('active');
 
     document.querySelector('.player-0-panel').classList.add('active');
+}
+
+
+function setWinningScore() {
+    var winningScore document.getElementById('winning-score').value
 }
 
 // target HTML elements with id #current- and change the text to reflect current dice roll
