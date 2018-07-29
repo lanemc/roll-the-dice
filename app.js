@@ -37,12 +37,14 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
 
     //3. Update the round score IF the rolled number was NOT 1
     if (dice !== 1) {
-        //Add score
+        //Add dice value to roundScore
         roundScore += dice;
+        //Update current score based on roundScore
         document.querySelector('#current-' + activePlayer).textContent = roundScore;
     }
     else {
         //Next player
+        activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
     }
 
 });
