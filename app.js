@@ -27,6 +27,11 @@ var x = document.querySelector('#score-0').textContent;
 
 document.querySelector('.dice').style.display = 'none';
 
+// btn-roll event listener and anonymous function
+document.querySelector('.btn-roll').addEventListener('click', function() {
+    //
+});
+
 
 
 
