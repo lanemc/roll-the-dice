@@ -15,10 +15,27 @@ var scores, roudScore, activePlayer, dice;
 // assign initial values
 score = [0,0];
 roundScore = 0;
-activePlayer = 0;
+activePlayer = 1;
 
 dice = Math.floor(Math.random() * 6) + 1;
-console.log(dice);
+
+// target HTML elements with id #current- and change the text to reflect current dice roll
+document.querySelector('#current-' + activePlayer).textContent = dice;
+// document.querySelector('#current-' + activePlayer).innerHTML = '<em>' + dice + '</em>';
+
+var x = document.querySelector('#score-0').textContent;
+
+document.querySelector('.dice').style.display = 'none';
+
+
+
+
+
+
+
+
+
+
 
 
 
