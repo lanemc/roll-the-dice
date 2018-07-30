@@ -109,8 +109,8 @@ function nextPlayer() {
     //document.querySelector('.player-0-panel').classList.remove('active');
     //document.querySelector('.player-1-panel').classList.add('active');
 
-    document.querySelector('.dice1').style.display = 'none';
-    document.querySelector('.dice2').style.display = 'none';
+    document.querySelector('.dice-0').style.display = 'none';
+    document.querySelector('.dice-1').style.display = 'none';
 }
 
 document.querySelector('.btn-new').addEventListener('click', init);
