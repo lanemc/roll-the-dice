@@ -70,6 +70,7 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
     }
 });
 
+// hold button event listener and anonymous function
 document.querySelector('.btn-hold').addEventListener('click', function() {
     if(gamePlaying) {
         // Add CURRENT score to GLOBAL score
@@ -96,6 +97,7 @@ document.querySelector('.btn-hold').addEventListener('click', function() {
     }
 });
 
+// toggle classes to set next player
 function nextPlayer() {
     activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
     roundScore = 0;
@@ -113,8 +115,10 @@ function nextPlayer() {
     document.querySelector('.dice-1').style.display = 'none';
 }
 
+// set the event listener to initialize the game
 document.querySelector('.btn-new').addEventListener('click', init);
 
+// initialization function
 function init() {
     scores = [0, 0];
     activePlayer = 0;
@@ -139,7 +143,7 @@ function init() {
     document.querySelector('.player-0-panel').classList.add('active');
 }
 
-
+// set the winning score as the value of the text input box
 function setWinningScore() {
     if(gamePlaying) {
         winningScore = document.getElementById('winning-score').value;
@@ -150,6 +154,7 @@ function setWinningScore() {
     }
 }
 
+// set the event listener to update the winning score
 document.getElementById('set-score').addEventListener('click', setWinningScore);
 
 // target HTML elements with id #current- and change the text to reflect current dice roll
