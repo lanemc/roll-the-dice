@@ -45,7 +45,21 @@ body {
     padding: 100px;
 }
 
+/**********************************************
+*** EXTRAS
+**********************************************/
+#set-score-container {
+    text-align: right;
+    position: relative;
+    padding: 50px;
+    top: 50px;
+}
 
+#score {
+    position: relative;
+    top: 120px;
+    z-index: 100;
+}
 
 /**********************************************
 *** PLAYERS

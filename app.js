@@ -56,7 +56,6 @@ document.querySelector('.btn-hold').addEventListener('click', function() {
         // Update the UI
         document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
 
-
         // Check if player won the game
         if (scores[activePlayer] >= winningScore) {
             // activePlayer wins
@@ -64,6 +63,7 @@ document.querySelector('.btn-hold').addEventListener('click', function() {
             document.querySelector('.dice').style.display = 'none';
             document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
             document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
+            document.getElementById("winning-score").disabled = true;
             gamePlaying = false;
         }
         else {
@@ -95,6 +95,7 @@ function init() {
     scores = [0, 0];
     activePlayer = 0;
     roundScore = 0;
+    winningScore = 100;
     gamePlaying = true;
 
     document.querySelector('.dice').style.display = 'none';
@@ -115,10 +116,13 @@ function init() {
 
 
 function setWinningScore() {
-    winningScore = document.getElementById('winning-score').value;
-    console.log(winningScore);
+    if(gamePlaying) {
+        winningScore = document.getElementById('winning-score').value;
+        console.log(winningScore);
 
-    document.getElementById('score').textContent = winningScore;
+        document.getElementById('score').textContent = winningScore;
+        document.getElementById('winning-score').value = '';
+    }
 }
 
 document.getElementById('set-score').addEventListener('click', setWinningScore);
